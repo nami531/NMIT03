@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random number list</title>
+    <link rel="stylesheet" type="text/css" href="/css/styles.css">
+</head>
+<body>
+    <h1>Random number list</h1>
+    <table th:if= "${totalNumbers>0}" border="1px">
+        <thead>
+            <th>Number</th>
+            <th>Operation</th>
+        </thead>
+        
+        <tr th:each= "number:${list}">
+            <td th:if= "${number > 50}" id="exceed" th:text="${number}"></td>
+            <td th:unless= "${number > 50}" id="smaller" th:text="${number}"></td>
+            <td>
+                <a th:href= "@{/remove/{id}(id=${number})}">Delete</a>
+            </td>
+        </tr>
+    </table>
+    <p>Total numbers: <span th:text="${totalNumbers}"></span> </p>
+    <a th:href= "@{/new}">New number</a>
+</body>
+</html>

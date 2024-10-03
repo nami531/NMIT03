@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora</title>
+    <style>
+        .focus {
+            background-color: yellow;
+        }
+
+        a {
+            text-decoration: none;
+            width: 100%;
+            padding-left: 2em;
+            padding-right: 2em;
+        }
+
+        table td {
+            border: 1px solid #ddd;
+            width: 5em;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <table>
+        <tr>
+            <td class="focus">Operand1</td>
+            <td th:text="${operand1}"></td>
+        </tr>
+        <tr>
+            <td>Operand2</td>
+            <td th:text="${operand2}"></td>
+        </tr>
+        <tr>
+            <td>Result</td>
+            <td th:text="${result}"></td>
+        </tr>
+    </table><br /> <br /> <br />
+    <table>
+        <tr>
+            <td><a th:href="@{/digit/1}">1</a></td>
+            <td><a th:href="@{/digit/2}">2</a></td>
+            <td><a th:href="@{/digit/3}">3</a></td>
+        </tr>
+        <tr>
+            <td><a th:href="@{/digit/4}">4</a></td>
+            <td><a th:href="@{/digit/5}">5</a></td>
+            <td><a th:href="@{/digit/6}">6</a></td>
+        </tr>
+        <tr>
+            <td><a th:href="@{/digit/7}">7</a></td>
+            <td><a th:href="@{/digit/8}">8</a></td>
+            <td><a th:href="@{/digit/9}">9</a></td>
+        </tr>
+        <tr>
+            <td><a th:href="@{/addition}">+</a></td>
+            <td><a th:href="@{/digit/0}">0</a></td>
+            <td><a th:href="@{/clear}">Clear</a></td>
+        </tr>
+        <tr>
+            <td colspan="3"><a th:href="@{/equals}">=</a></td>
+        </tr>
+    </table>
+</body>
+
+</html>

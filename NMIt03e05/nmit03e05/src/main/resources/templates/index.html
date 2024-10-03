@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Favourite movie</title>
+</head>
+<body>
+        <h1>Choose your favourite movie</h1>
+        <table >
+                <tr>
+                    <td th:each= "movie:${movies}">
+                        <img th:src= "@{img/{nombre}(nombre=${movie.name} + '.jpg')}"  width="90px" height="160px"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td th:each= "movie:${movies}">
+                        <a th:href= "@{/vote/{name}(name=${movie.name})}"><img th:src= "@{img/icon.png}" width="25px" height="25px"></a> 
+                        <span th:text="${movie.votes}"></span>
+                    </td>
+                </tr>  
+        </table>
+</body>
+</html>
